@@ -13,6 +13,7 @@ pipeline {
       steps {
         sh '''./mvnw test
 '''
+        junit '**/target/surefire-reports/TEST-*.xml'
       }
     }
 
