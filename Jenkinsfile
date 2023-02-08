@@ -17,5 +17,14 @@ pipeline {
       }
     }
 
+    stage('Static Analysis') {
+      steps {
+        sh '''./mvnw sonar:sonar \\
+  -Dsonar.projectKey=JPetstore \\
+  -Dsonar.host.url=http://44.205.255.188:9000 \\
+  -Dsonar.login=sqp_3a3ebdb1f58893374bf9e6d36613759b0f9e0b9d'''
+      }
+    }
+
   }
 }
