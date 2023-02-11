@@ -33,10 +33,10 @@ pipeline {
       }
     }
 
-    stage(' Integration Test') {
+    stage('Deploy') {
       steps {
         node(label: 'test') {
-          sh '''./mvnw  -P tomcat90
+          sh '''./mvnw spring-boot:run </dev/null &>/dev/null &
 '''
         }
 
